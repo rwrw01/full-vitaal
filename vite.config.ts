@@ -4,6 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 import { resolve } from 'path';
 
 export default defineConfig({
+  base: '/full-vitaal/',
   resolve: {
     alias: { '@': resolve(__dirname, 'src') },
   },
@@ -25,10 +26,10 @@ export default defineConfig({
         theme_color: '#10b981',
         background_color: '#0f172a',
         display: 'standalone',
-        start_url: '/',
+        start_url: '/full-vitaal/',
         icons: [
-          { src: '/icon-192.png', sizes: '192x192', type: 'image/png' },
-          { src: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+          { src: '/full-vitaal/icon-192.png', sizes: '192x192', type: 'image/png' },
+          { src: '/full-vitaal/icon-512.png', sizes: '512x512', type: 'image/png' },
         ],
       },
     }),
