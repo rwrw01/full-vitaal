@@ -4,6 +4,8 @@ import { get, set, del, keys, clear } from 'idb-keyval';
 const KEY_START = 'start_date';
 const KEY_WEEK_DONE = (w: number) => `week_${w}_done`;
 const KEY_REFLECTION = (w: number) => `reflection_${w}`;
+const KEY_CHECKLIST = (w: number) => `checklist_${w}`;
+const KEY_QUIZ = (w: number) => `quiz_${w}`;
 
 export const store = {
   async setStartDate(date: string): Promise<void> {
@@ -51,6 +53,22 @@ export const store = {
       if (text) results.push({ week, text });
     }
     return results;
+  },
+
+  async saveChecklist(week: number, checked: string[]): Promise<void> {
+    await set(KEY_CHECKLIST(week), checked);
+  },
+
+  async getChecklist(week: number): Promise<string[]> {
+    return (await get<string[]>(KEY_CHECKLIST(week))) ?? [];
+  },
+
+  async saveQuizAnswers(week: number, answers: Record<number, string>): Promise<void> {
+    await set(KEY_QUIZ(week), answers);
+  },
+
+  async getQuizAnswers(week: number): Promise<Record<number, string>> {
+    return (await get<Record<number, string>>(KEY_QUIZ(week))) ?? {};
   },
 
   async clear(): Promise<void> {

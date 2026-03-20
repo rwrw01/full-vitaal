@@ -8,6 +8,10 @@ vi.mock('@/data/store', () => ({
     saveReflection: vi.fn().mockResolvedValue(undefined),
     isWeekCompleted: vi.fn().mockResolvedValue(false),
     completeWeek: vi.fn().mockResolvedValue(undefined),
+    getChecklist: vi.fn().mockResolvedValue([]),
+    saveChecklist: vi.fn().mockResolvedValue(undefined),
+    getQuizAnswers: vi.fn().mockResolvedValue({}),
+    saveQuizAnswers: vi.fn().mockResolvedValue(undefined),
   },
 }));
 
