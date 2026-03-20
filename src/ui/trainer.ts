@@ -40,7 +40,7 @@ export async function renderTrainer(container: HTMLElement): Promise<void> {
   const copyBtn = container.querySelector('#copy-btn') as HTMLButtonElement;
 
   btn.addEventListener('click', async () => {
-    const baseUrl = window.location.origin;
+    const baseUrl = window.location.origin + (import.meta.env.BASE_URL || '/');
     const url = buildCohortUrl(baseUrl, input.value);
 
     await QRCode.toCanvas(canvas, url, {
