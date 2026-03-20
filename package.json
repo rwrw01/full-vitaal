@@ -1,0 +1,27 @@
+{
+  "name": "vitaal-bootcamp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "idb-keyval": "6.2.2",
+    "qrcode": "1.5.4"
+  },
+  "devDependencies": {
+    "@types/qrcode": "1.5.6",
+    "@vite-pwa/assets-generator": "1.0.2",
+    "fake-indexeddb": "6.2.5",
+    "happy-dom": "20.8.4",
+    "typescript": "5.9.3",
+    "vite": "7.3.1",
+    "vite-plugin-pwa": "1.2.0",
+    "vitest": "4.1.0"
+  }
+}
