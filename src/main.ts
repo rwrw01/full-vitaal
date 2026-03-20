@@ -6,6 +6,7 @@ import { renderOverview } from './ui/overview';
 import { renderModule } from './ui/module';
 import { renderWelcome, renderError, renderFuture, renderCompleted } from './ui/welcome';
 import { renderTrainer } from './ui/trainer';
+import { renderHelp } from './ui/help';
 import { formatReflections, downloadTextFile } from './service/export';
 import { setupPWA } from './pwa';
 import weeks from './content/weeks.json';
@@ -27,6 +28,10 @@ async function initStartDate(): Promise<void> {
 
 addRoute('/trainer', async () => {
   await renderTrainer(app);
+});
+
+addRoute('/help', () => {
+  renderHelp(app);
 });
 
 addRoute('/week/:num', async (params) => {

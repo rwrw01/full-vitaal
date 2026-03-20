@@ -25,6 +25,8 @@ export async function renderTrainer(container: HTMLElement): Promise<void> {
       <button id="generate-btn" class="btn btn--primary" style="width:100%">QR-code genereren</button>
     </div>
 
+    <a href="#/help" style="display:block;text-align:center;color:var(--color-primary);font-size:0.9rem;margin-bottom:1.5rem">📖 Handleiding — hoe werkt het?</a>
+
     <div id="qr-output" style="text-align:center;display:none">
       <canvas id="qr-canvas" style="max-width:280px;width:100%;border-radius:var(--radius)"></canvas>
       <p id="qr-url" style="font-size:0.8rem;color:var(--color-text-muted);margin-top:0.5rem;word-break:break-all"></p>
